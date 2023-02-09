@@ -1,19 +1,16 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import Texto from '../../../components/Texto';
-import logo from '../../../../assets/logo.png';
 
-export default function Detalhes() {
+export default function Detalhes({ nome, logoFazenda, nomeFazenda, descricao, preco }) {
   return <>
-    <Texto style={styles.nome}>Cesta de Verduras</Texto>
+    <Texto style={styles.nome}>{nome}</Texto>
     <View style={styles.fazenda}>
-      <Image source={logo} style={styles.imagemFazenda} />
-      <Texto style={styles.nomeFazenda}>Jenny Jack Farm</Texto>
+      <Image source={logoFazenda} style={styles.imagemFazenda} />
+      <Texto style={styles.nomeFazenda}>{nomeFazenda}</Texto>
     </View>
-    <Texto style={styles.descicao}>Uma cesta com produtos selecionados cuidadosamente da fazenda
-      direto para sua cozinha.
-    </Texto>
-    <Texto style={styles.preco}>R$ 40,00</Texto>
+    <Texto style={styles.descricao}>{descricao}</Texto>
+    <Texto style={styles.preco}>{preco}</Texto>
   </>;
 }
 
@@ -38,7 +35,7 @@ const styles = StyleSheet.create({
     lineHeight: 26,
     marginLeft: 12,
   },
-  descicao: {
+  descricao: {
     color: '#A3A3A3',
     fontSize: 16,
     lineHeight: 26
